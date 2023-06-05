@@ -10,10 +10,6 @@ export class CreateFormComponent {
   inputValue = '';
   constructor(private toDoService: ToDoService) {}
 
-  onKey(event: any) {
-    this.inputValue = event.target.value;
-  }
-
   submitToDo() {
     this.toDoService.toDoBody.next(this.inputValue);
     this.inputValue = '';

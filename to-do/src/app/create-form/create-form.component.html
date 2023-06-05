@@ -1,3 +1,2 @@
-<input type="text" (keyup)="onKey($event)">
-<p>{{inputValue}}</p>
+<input type="text" [(ngModel)]="inputValue">
 <button (click)="submitToDo()">create to do</button>

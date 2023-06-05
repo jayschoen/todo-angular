@@ -20,7 +20,6 @@ export class ListComponent implements OnInit {
   ngOnInit() {
     this.toDoService.toDoBody.subscribe(
       (res) => {
-        // console.log(res);
         this.createNewToDo(res)
       }
     );
