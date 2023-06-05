@@ -8,6 +8,6 @@ export class ToDoService {
   toDoBody = new Subject();
   inputValue = '';
 
-  toDoList = new BehaviorSubject<string[]>(['one thing', 'and another', 'once more for the kids watching at home']);
+  toDoList = new BehaviorSubject<string[]>(['kill thanos', 'solve world hunger', 'figure out how humanity can survive on mars']);
   constructor() {}
 }

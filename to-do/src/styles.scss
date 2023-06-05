@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+$bg-color: #1d1c1c;
+$font-color: #eee;
+$primary: rgb(7, 41, 79);
+$alert: rgb(148, 54, 54);
+
+:root {
+  --base-font: monospace;
+  --base-radius: 10px;
+  --container: 75vw;
+}
+
+body {
+  background-color: $bg-color;
+  color: $font-color;
+  font-family: var(--base-font);
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  width: var(--container);
+  margin: 0 auto;
+  padding: 4rem 0 2rem 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  width: var(--container);
+  margin: 0 auto;
+}
+
+button {
+  background-color: $primary;
+  color: $font-color;
+  border-radius: var(--base-radius);
+  border: 0px solid transparent;
+  &:hover {
+    background-color: lighten($primary, 5%);
+  }
+}

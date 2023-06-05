@@ -1,0 +1,23 @@
+.form-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  background: rgb(56, 56, 56);
+  padding: 2rem 0;
+  width: var(--container);
+  margin: 0 auto;
+  input {
+    height: 3rem;
+    width: 50vw;
+    border-radius: 5px;
+    outline: none;
+    border: 0px solid transparent;
+    font-size: 1.6rem;
+    padding: 0 1.2rem;
+  }
+  button {
+    color: var(--font-color);
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
