@@ -1,12 +1,8 @@
 import {
   Component,
-  ComponentRef,
   OnInit,
-  ViewChild,
-  ViewContainerRef,
 } from '@angular/core';
 import { ToDoService } from '../to-do.service';
-import { ListItemComponent } from '../list-item/list-item.component';
 
 @Component({
   selector: 'app-list',
@@ -14,18 +10,25 @@ import { ListItemComponent } from '../list-item/list-item.component';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  toDoList: string[] = []
+  toDoList: string[] = [];
   constructor(private toDoService: ToDoService) {}
 
   ngOnInit() {
-    this.toDoService.toDoBody.subscribe(
-      (res) => {
-        this.createNewToDo(res)
-      }
-    );
+    this.toDoService.toDoBody.subscribe((res) => {
+      this.createNewToDo(res);
+    });
+    this.toDoService.toDoList.subscribe((res) => {
+      this.toDoList = res;
+    });
   }
 
   createNewToDo(toDoInput: any) {
     this.toDoList.push(toDoInput);
+    this.toDoService.toDoList.next(this.toDoList);
+  }
+
+  removeToDo(toDoId: number) {
+    this.toDoList.splice(toDoId, 1);
+    this.toDoService.toDoList.next(this.toDoList);
   }
 }

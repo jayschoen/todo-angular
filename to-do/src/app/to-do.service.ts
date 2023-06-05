@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,5 +7,7 @@ import { Subject } from 'rxjs';
 export class ToDoService {
   toDoBody = new Subject();
   inputValue = '';
+
+  toDoList = new BehaviorSubject<string[]>(['one thing', 'and another', 'once more for the kids watching at home']);
   constructor() {}
 }
